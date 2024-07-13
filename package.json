@@ -1,0 +1,37 @@
+{
+  "name": "adnn.ts",
+  "version": "0.0.0",
+  "description": "adnn provides TypeSafe Javascript-native neural networks on top of general scalar/tensor reverse-mode automatic differentiation. You can use just the AD code, or the NN layer built on top of it. This architecture makes it easy to define big, complex numerical computations and compute derivatives w.r.t. their inputs/parameters. adnn also includes utilities for optimizing/training the parameters of such computations.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beenotung/adnn.ts.git"
+  },
+  "homepage": "https://github.com/beenotung/adnn.ts#readme",
+  "bugs": {
+    "url": "https://github.com/beenotung/adnn.ts/issues"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "build": "rimraf dist && tsc -p . && rimraf dist/tsconfig.tsbuildinfo",
+    "tsc": "tsc -p ."
+  },
+  "dependencies": {
+    "adnn": "^2.0.10",
+    "auto-encoder.ts": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
+  }
+}
