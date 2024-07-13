@@ -9,11 +9,7 @@
     "typescript",
     "isomorphic"
   ],
-  "author": {
-    "name": "Beeno Tung",
-    "email": "aabbcc1241@yahoo.com.hk",
-    "url": "https://beeno-tung.surge.sh"
-  },
+  "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
@@ -23,14 +19,18 @@
   "bugs": {
     "url": "https://github.com/beenotung/adnn.ts/issues"
   },
-  "main": "index.js",
+  "main": "dist/adnn.js",
+  "types": "dist/adnn.d.ts",
   "directories": {
     "test": "test"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "tsc --noEmit",
     "clean": "rimraf dist",
-    "build": "rimraf dist && tsc -p . && rimraf dist/tsconfig.tsbuildinfo",
+    "build": "rimraf dist && tsc -p . && rimraf dist/{dev,test,*.tsbuildinfo}",
     "tsc": "tsc -p ."
   },
   "dependencies": {
