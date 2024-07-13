@@ -1,6 +1,6 @@
 import { createAutoEncoder } from 'auto-encoder.ts'
 import { Network, nn } from '../adnn'
-import { existsSync, writeFileSync } from 'fs'
+import { existsSync, readFileSync, writeFileSync } from 'fs'
 import assert from 'assert'
 
 let X = [
@@ -41,7 +41,7 @@ let net = (autoEncoder as any).net as Network
 
 let file = './net.json'
 if (existsSync(file)) {
-  let json = require(file)
+  let json = JSON.parse(readFileSync(file).toString())
   encoder = Network.deserializeJSON(json.encoder)
   decoder = Network.deserializeJSON(json.decoder)
   net = nn.sequence([encoder, decoder])
